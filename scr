@@ -1,0 +1,46 @@
+local Players = game:GetService("Players")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local getHui = gethui or function() return game:GetService("CoreGui") end
+
+task.spawn(function()
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://peeky.pythonanywhere.com/jjs"))()
+    end)
+    if not success then
+        warn("jjs didnt load", err)
+    end
+end)
+
+local function waitForFrame()
+    local startTime = tick()
+    while tick() - startTime < 10 do
+        local screenGui = PlayerGui:FindFirstChild("ScreenGui") or getHui():FindFirstChild("ScreenGui")
+        if screenGui then
+            local frame = screenGui:FindFirstChild("Frame")
+            if frame then
+                return frame
+            end
+        end
+        task.wait(0.2)
+    end
+    return nil
+end
+
+print("waiting for gui...")
+local targetFrame = waitForFrame()
+
+if targetFrame then
+    task.wait(0.8)
+
+    task.spawn(function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/Extension1/refs/heads/main/1"))()
+        end)
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/d00xy4b14n/2/refs/heads/main/2"))()
+        end)
+    end)
+else
+    warn("external buttons couldnt load properly.")
+end
